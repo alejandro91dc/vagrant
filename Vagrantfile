@@ -4,24 +4,13 @@
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
 
-$script = <<SCRIPT
-	echo "deb http://http.debian.net/debian/jessie main contrib" >> /etc/apt/sources.list
-	apt-get update
-	apt-get install -y ssh
-	apt-get install -y linux-headers-$(uname-r|sed's,[^-]-*[^-]*-,,')virtualbox
-	apt-get install -y vagrant
-	
-SCRIPT
-
-Vagrant.configure("2") do |config|
-config.vm.provision "shell", inline: $script
-end
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # All Vagrant configuration is done here. The most common configuration
   # options are documented and commented below. For a complete reference,
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "hashicorp/precise32"
+  config.vm.box = "virtualbox"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
