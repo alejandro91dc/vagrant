@@ -1,6 +1,6 @@
 apt-get update
-wget virtualbox-4.3_4.3.32-103443~Debian~wheezy_amd64.deb.1
-dpkg -i virtualbox-4.3_4.3.32-103443~Debian~wheezy_amd64.deb.1
+wget http://download.virtualbox.org/virtualbox/4.3.32/virtualbox-4.3_4.3.32-103443~Debian~wheezy_amd64.deb
+dpkg -i virtualbox-4.3_4.3.32-103443~Debian~wheezy_amd64.deb.
 apt-get install -y vagrant
 cd vagrant && vagrant up
 vagrant ssh
