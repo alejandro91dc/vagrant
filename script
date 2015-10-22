@@ -1,8 +1,13 @@
 echo "deb http://http.debian.net/debian/jessie main contrib" >> /etc/apt/sources.list
 apt-get update
+echo "INSTALANDO CABECERAS"
 apt-get install linux-headers-$(uname -r|sed 's,[^-]*-[-^]*-,,')
+echo "INSTALANDO DKMS"
+apt-get install dkms
 wget http://download.virtualbox.org/virtualbox/4.3.32/virtualbox-4.3_4.3.32-103443~Debian~wheezy_amd64.deb
+echo "INSTALANDO PAQUETE DESCARGADO DE VIRTUAL BOX"
 dpkg -i virtualbox-4.3_4.3.32-103443~Debian~wheezy_amd64.deb
+echo "INSTALANDO VAGRANT"
 apt-get install -y vagrant
 cd vagrant && vagrant up
 vagrant ssh
