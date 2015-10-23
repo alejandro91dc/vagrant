@@ -13,6 +13,6 @@ dpkg -i virtualbox-4.3_4.3.32-103443~Debian~wheezy_amd64.deb
 apt-get -fy install
 echo "INSTALANDO VAGRANT"
 apt-get install -y vagrant
-cd vagrant && vagrant up
+vagrant up
 vagrant ssh
 echo "FIN"
